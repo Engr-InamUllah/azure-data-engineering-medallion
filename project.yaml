@@ -1,0 +1,19 @@
+name: azure-data-engineering-medallion
+owner: Engr-InamUllah
+status: scaffold
+stack: 'Azure Data Factory, ADLS Gen2, Databricks, Delta Lake'
+pipeline:
+  - extract
+  - land
+  - standardize
+  - conform
+  - serve
+quality_gates:
+  - schema_validation
+  - null_thresholds
+  - duplicate_detection
+  - freshness_check
+  - automated_tests
+security:
+  secrets: environment_or_secret_store
+  least_privilege: true
